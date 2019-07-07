@@ -1,0 +1,46 @@
+<div>
+
+  <ul>
+<li> <a (click)="viewTab='students'"> Students </a> </li>
+<li> <a (click)="viewTab='ids'"> Ranking Student and IDs </a> </li>
+<li> <a (click)="viewTab='tasks'"> Tasks </a> </li>
+</ul>
+
+<div [ngSwitch]="viewTab">
+<div *ngSwitchCase = "'students'">
+<h2 appColorfulBG> My Students</h2>
+<ul>
+<li *ngFor = "let student of studentsArray" [ngClass] = "{ 'change-italic' :boolTwo, 'student-color':boolOne}" [ngStyle]="{'font-size':'80px','font-family':'san serif'}"> {{student.name}} </li>
+</ul>
+<button (click) ="toggle()"> All Attended </button>
+<br/>
+<p *ngIf="studentsArray.length>0; then students; else nostudents"> </p>
+<ng-template #nostudents> No students enrolled in the course </ng-template>
+<ng-template #students> The number of enrolled students is: {{studentsArray.length}}</ng-template>
+</div>
+
+<div *ngSwitchCase = "'tasks'">
+
+  <h2 [style.color]="isError?'red':'navy'">My Students Tasks</h2>
+   <ul>
+<li  [style.font-size.%]="'60'" *ngFor="let task of tasks">{{ task }}</li>
+   </ul>
+</div>
+<div *ngSwitchCase = "'ids'">
+<h2><p #rs [title]= "name" (click)="clickedText='you justclicked'" [style.color]="'gray'" >
+     Ranking Student: {{rs.title}} {{clickedText}}</p> </h2>
+  <div>
+  <table border= “3”>
+  <tr>
+  <td [attr.colspan]="1+2"> Student's IDs </td>
+  </tr>
+  <tr>
+  <td *ngFor = "let student of studentsArray"> {{student.id}} </td>
+
+  </tr>
+  </table>
+  </div>
+</div>
+</div>
+
+</div>
