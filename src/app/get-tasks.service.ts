@@ -1,16 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class GetTasksService {
-
-  constructor() { }
+  constructor() {}
   getTasks() {
-
-   return ["Do Homework", "Study for the quiz", "Prepare presentation"];
-
- }
-
-
+    return ["Do Homework", "Study for the quiz", "Prepare presentation"];
+  }
 }

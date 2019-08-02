@@ -1,0 +1,48 @@
+<div>
+ <form [formGroup] ="signupForm">
+   <div>
+   <label for="un"> Username</label>
+   <input type="text" id="un" formControlName="username" />
+   </div>
+   <div
+   *ngIf="
+   signupForm.get('username').errors?.required &&
+   signupForm.get('username').touched
+   "
+   >
+   Please insert your name
+   </div>
+   <div
+   *ngIf="
+   signupForm.get('username').errors?.prohibited &&
+   signupForm.get('username').touched
+   "
+   >
+   You cannot use this username
+   </div>
+
+   <div>
+     <label for="pw"> Password</label>
+
+     <input type="password" id="pw" formControlName="password" />
+     <div
+     *ngIf="
+     signupForm.get('password').errors?.prohibited &&
+     signupForm.get('password').touched
+     "
+     >
+     You cannot use this password
+     </div>
+
+   </div>
+   <div>
+     <label for="cpw"> Confirm Password</label>
+  <input type="password" id="cpw" formControlName="confirmedpassword" />
+   </div>
+   <br />
+   <div>
+     <button type="submit">Sign Up</button>
+   </div>
+  </form>
+  {{ signupForm.value | json }}
+</div>

@@ -1,0 +1,31 @@
+<form  #studentForm="ngForm">
+   <label for="studentName">Name</label>
+   <input
+   id="studentName"
+   name="thename"
+   type="text"
+   [(ngModel)]="firstStudent.name"
+   #varFirst="ngModel"
+   required="true"
+   pattern=".{3,}"
+   />
+   <div *ngIf="varFirst.touched && varFirst.errors?.required">
+   Please enter your name
+   </div>
+   <div
+   *ngIf="
+   varFirst.touched && varFirst.errors?.pattern && !varFirst.errors?.required"
+   >
+   Name should be 3 or more characters.
+   </div>
+
+   <br />
+   <br />
+   <label for="gender"> Gender </label>
+   <div id="gender">
+      <label for="female">Female</label>
+<input type="radio" name="theGender" id="female" value="female" [(ngModel)]="firstStudent.gender"/>
+      <label for="male">Male</label>
+<input type="radio" name="theGender" id="male" value="male" [(ngModel)]="firstStudent.gender"/>   </div>
+   <button type="submit" (click)="onSubmit()">Submit</button>
+</form>

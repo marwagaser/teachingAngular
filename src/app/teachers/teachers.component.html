@@ -1,0 +1,8 @@
+<h1>Teachers Offices</h1>
+<div>
+<ul>
+  <li *ngFor = "let x of teachers">
+<a [routerLink]="['/teachers', x.name, x.office]">  {{x.name}} </a>
+  </li>
+</ul>
+</div>
