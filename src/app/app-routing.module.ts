@@ -9,7 +9,7 @@ const routes: Routes = [
   {path: "teachers/:name/:office", component: TeacherInfoComponent },
 { path: "students", component: StudentsComponent },
 { path: "teachers", component: TeachersComponent },
-  { path: "**", component: NotfoundComponent }
+{ path: "**", component: NotfoundComponent }
 ];
 
 

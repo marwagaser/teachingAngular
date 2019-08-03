@@ -1,6 +1,6 @@
 <div>
 
-  <ul>
+  <!-- <ul>
 <li> <a (click)="viewTab='students'"> Students </a> </li>
 <li> <a (click)="viewTab='ids'"> Ranking Student and IDs </a> </li>
 <li> <a (click)="viewTab='tasks'"> Tasks </a> </li>
@@ -41,6 +41,14 @@
   </table>
   </div>
 </div>
-</div>
+</div> -->
+<!-- UnderGrads are:
+<h1>{{ txt }}</h1>
+<app-under-grads (childEvent)="txt = $event" [studentList]="undergradsList">
+</app-under-grads>
 
-</div>
+</div> -->
+<input type="text" [(ngModel)]="textbox" />
+
+<div>{{textbox}} </div>
+<app-under-grads [ourvalue]="textbox"></app-under-grads>

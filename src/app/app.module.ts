@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { TeachersComponent } from './teachers/teachers.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { TeacherInfoComponent } from './teacher-info/teacher-info.component';
+import { UnderGradsComponent } from './under-grads/under-grads.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TeacherInfoComponent } from './teacher-info/teacher-info.component';
     ReactiveStudentFormComponent,
     TeachersComponent,
     NotfoundComponent,
-    TeacherInfoComponent
+    TeacherInfoComponent,
+    UnderGradsComponent
   ],
   imports: [
     BrowserModule,
