@@ -42,13 +42,13 @@
   </div>
 </div>
 </div> -->
-<!-- UnderGrads are:
+UnderGrads are:
 <h1>{{ txt }}</h1>
-<app-under-grads (childEvent)="txt = $event" [studentList]="undergradsList">
+<app-under-grads  (studentDeletion)="deleteStudent($event)" (childEvent)="txt = $event" [studentList]="undergradsList">
 </app-under-grads>
 
-</div> -->
-<input type="text" [(ngModel)]="textbox" />
+</div>
+<!-- <input type="text" [(ngModel)]="textbox" />
 
 <div>{{textbox}} </div>
-<app-under-grads [ourvalue]="textbox"></app-under-grads>
+<app-under-grads [ourvalue]="textbox"></app-under-grads> -->

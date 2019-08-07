@@ -47,6 +47,17 @@ public undergradsList = this.undergrads();
      console.log(Arrayres);
      return Arrayres;
    }
+   deleteStudent(name: string) {
+  for (var x = 0; x < this.students.length; x++) {
+    if (this.students[x].name === name) {
+      this.students.splice(x, 1);
+      this.students = [...this.students];
+      this.undergradsList = this.undergrads();
+      console.log(x);
+      return;
+    }
+  }
+  }
   print() {
     console.log("The ranking student was clicked");
   }
